@@ -66,7 +66,7 @@ add_action('wp_enqueue_scripts', function () {
 
         global $post;
         $etsy_id = get_post_meta($post->ID, '_etsy_product_id', true);
-        $etsy_api_key = 'uit67os8xe3logub2nofh0x9'; // Use your real Etsy API key here
+        $etsy_api_key = 'api'; // Use your real Etsy API key here
 
         wp_localize_script('etsy-reviews-script', 'EtsyReviewsData', [
             'etsyProductId' => $etsy_id,
@@ -86,7 +86,7 @@ function ers_handle_etsy_reviews_ajax() {
         wp_send_json_error('Missing listing ID');
     }
 
-    $api_key = 'uit67os8xe3logub2nofh0x9'; // Make sure this matches your real key
+    $api_key = api'; // Make sure this matches your real key
 
     $url = "https://openapi.etsy.com/v3/application/listings/{listing_id}/reviews";
 
